@@ -3,6 +3,8 @@ class CreateListings < ActiveRecord::Migration
     create_table :listings do |t|
       t.string :listing_id, null: false
       t.string :listing_source_url, null: false
+      t.integer :address_id, null:false
+      t.integer :landlord_id, null:false
       
       t.timestamps
 

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
   create_table "addresses", :force => true do |t|
     t.string   "street",     :null => false
     t.string   "city",       :null => false
+    t.string   "state",      :null => false
     t.integer  "zipcode",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -31,6 +32,8 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
   create_table "listings", :force => true do |t|
     t.string   "listing_id",         :null => false
     t.string   "listing_source_url", :null => false
+    t.integer  "address_id",         :null => false
+    t.integer  "landlord_id",        :null => false
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
