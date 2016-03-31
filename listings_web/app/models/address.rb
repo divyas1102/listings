@@ -1,3 +1,4 @@
 class Address < ActiveRecord::Base
-  attr_accessible :street, :city, :state, :zipcode
+
+  has_one :listing, dependent: :destroy
 end

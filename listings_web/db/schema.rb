@@ -23,11 +23,14 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
   end
 
   create_table "landlords", :force => true do |t|
+    t.string   "name",       :null => false
     t.string   "email"
     t.string   "phone"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "landlords", ["name"], :name => "index_landlords_on_name"
 
   create_table "listings", :force => true do |t|
     t.string   "listing_id",         :null => false
