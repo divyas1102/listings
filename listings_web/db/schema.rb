@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "listings", ["listing_identifier"], :name => "index_listings_on_listing_identifier", :unique => true
-
   create_table "photos", :force => true do |t|
     t.string   "url"
     t.string   "caption"
