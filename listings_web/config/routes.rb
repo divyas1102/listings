@@ -1,4 +1,8 @@
 ListingsWeb::Application.routes.draw do
+  resources :listings
+  ActiveAdmin.routes(self)
+  root 'admin/listings#index'
+  #ActiveAdmin.routes(self)
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
