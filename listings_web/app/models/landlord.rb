@@ -1,10 +1,12 @@
 class Landlord < ActiveRecord::Base
 
-  has_one :listing, dependent: :destroy
+  has_many :listing, dependent: :destroy
 
-  before_save :format_phone_number
+  before_validation :format_phone_number
+
+  #validates :phone, length: {is: 10}
 
   def format_phone_number
-    phone.gsub('-', '').gsub('(', '').gsub(')', '')
+    self.phone = phone.split('').select{|n| n.match(/[0-9]+/)}.join('') if phone
   end
 end
