@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # load data from existing xml file
-#XmlProcessor.process('resources/code_challenge_listings.xml')
+XmlProcessor.process('resources/code_challenge_listings.xml')
