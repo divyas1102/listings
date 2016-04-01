@@ -41,3 +41,11 @@ A rails app that processes property listing information from an xml feed.
 3. start up the rails server
 4. localhost:3000 should take you to the main listings page
 
+##### Database #####
+![database diagram](https://github.com/divyas1102/listings/blob/master/listings_web/resources/database_diagram.jpg)
+
+##### screenshots of ui #####
+
+
+https://github.com/divyas1102/listings/blob/master/listings_web/resources/listings.jpg
+https://github.com/divyas1102/listings/blob/master/listings_web/resources/address_list.jpg
