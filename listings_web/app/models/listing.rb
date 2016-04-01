@@ -5,5 +5,6 @@ class Listing < ActiveRecord::Base
   has_many :photo
   has_one :listing_detail
 
-  #validates :photo, :length => { :minimum => 3}
+  validates :photo, :length => { :minimum => 3, :message=>"requires atleast 3 photos"}
+  validates_uniqueness_of :listing_identifier, :message => 'is not unique'
 end

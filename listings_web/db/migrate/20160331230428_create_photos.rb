@@ -5,7 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :caption
       t.text :description
       t.integer :seq
-      t.references :listings, foreign_key: true
+      t.references :listing, foreign_key: true
 
       t.timestamps null: false
     end

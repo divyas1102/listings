@@ -8,8 +8,6 @@ class CreateListings < ActiveRecord::Migration
       
       t.timestamps
     end
-
-    add_index :listings, :listing_identifier
   end
 
   def down
