@@ -77,7 +77,7 @@ class XmlProcessor
           current_listing.save!
 
           begin
-            current_listing_detail = ListingDetail.where(listing: current_listing).first_or_initialize
+            current_listing_detail = ListingDetail.where(listing_id: current_listing.id).first_or_initialize
             current_listing_detail.update_attributes!(listing_details)
           rescue => e
             # log e
