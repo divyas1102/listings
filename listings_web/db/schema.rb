@@ -14,10 +14,12 @@
 ActiveRecord::Schema.define(:version => 201603310419000) do
 
   create_table "addresses", :force => true do |t|
-    t.string   "street",     :null => false
-    t.string   "city",       :null => false
-    t.string   "state",      :null => false
-    t.integer  "zipcode",    :null => false
+    t.float    "latitude",   :null => false
+    t.float    "longitude",  :null => false
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -32,15 +34,36 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
 
   add_index "landlords", ["name"], :name => "index_landlords_on_name"
 
+  create_table "listing_details", :force => true do |t|
+    t.integer  "price",          :null => false
+    t.integer  "bedroom_count"
+    t.integer  "bathroom_count"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "listing_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "listings", :force => true do |t|
-    t.string   "listing_id",         :null => false
+    t.string   "listing_identifier", :null => false
     t.string   "listing_source_url", :null => false
-    t.integer  "address_id",         :null => false
-    t.integer  "landlord_id",        :null => false
+    t.integer  "address_id"
+    t.integer  "landlord_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "listings", ["listing_id"], :name => "index_listings_on_listing_id"
+  add_index "listings", ["listing_identifier"], :name => "index_listings_on_listing_identifier"
+
+  create_table "photos", :force => true do |t|
+    t.string   "url"
+    t.string   "caption"
+    t.text     "description"
+    t.integer  "seq"
+    t.integer  "listings_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
