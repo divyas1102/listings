@@ -1,12 +1,13 @@
 class Landlord < ActiveRecord::Base
+  include PhoneNumberFormatter
 
   has_many :listing, dependent: :destroy
 
-  before_validation :format_phone_number
+  validates :phone, length: {is: 10}
+  before_validation :format_phone
 
-  #validates :phone, length: {is: 10}
-
-  def format_phone_number
-    self.phone = phone.split('').select{|n| n.match(/[0-9]+/)}.join('') if phone
+  private
+  def format_phone
+    self.phone = self.format_phone_number(phone)
   end
 end
