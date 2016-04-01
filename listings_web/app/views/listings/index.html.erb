@@ -1,0 +1,15 @@
+<h1>Listings</h1>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Listing ID</th>
+  </tr>
+ 
+  <% @listings.each do |listing| %>
+    <tr style= "width: 100%">
+      <td style= "width: 50%"><%= listing.listing_identifier %></td>
+      <td style= "width: 50%"><%= listing.listing_source_url %></td>
+    </tr>
+  <% end %>
+</table>
