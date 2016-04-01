@@ -33,3 +33,11 @@ A rails app that processes property listing information from an xml feed.
 2. user profiles for logging in as viewer, landlord and admin
 
 3. UI to allow editing and updating information for landlords and admins
+
+#####Steps to install locally#####
+1. Clone repo
+2. set up DB
+  - rake db:create db:migrate db:seed db:test:prepare
+3. start up the rails server
+4. localhost:3000 should take you to the main listings page
+

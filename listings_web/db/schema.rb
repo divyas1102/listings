@@ -54,14 +54,14 @@ ActiveRecord::Schema.define(:version => 201603310419000) do
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "listings", ["listing_identifier"], :name => "index_listings_on_listing_identifier"
+  add_index "listings", ["listing_identifier"], :name => "index_listings_on_listing_identifier", :unique => true
 
   create_table "photos", :force => true do |t|
     t.string   "url"
     t.string   "caption"
     t.text     "description"
     t.integer  "seq"
-    t.integer  "listings_id"
+    t.integer  "listing_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
