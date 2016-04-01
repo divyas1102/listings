@@ -45,7 +45,6 @@ A rails app that processes property listing information from an xml feed.
 ![database diagram](https://github.com/divyas1102/listings/blob/master/listings_web/resources/database_diagram.jpg)
 
 ##### screenshots of ui #####
+![listings](https://github.com/divyas1102/listings/blob/master/listings_web/resources/listings.jpg)
 
-
-https://github.com/divyas1102/listings/blob/master/listings_web/resources/listings.jpg
-https://github.com/divyas1102/listings/blob/master/listings_web/resources/address_list.jpg
+![address](https://github.com/divyas1102/listings/blob/master/listings_web/resources/address_list.jpg)
